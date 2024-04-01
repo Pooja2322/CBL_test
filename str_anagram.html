@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Anagram</title>
+</head>
+<body>
+    <script>
+        function sort(str) {
+            let arr = str.toLowerCase().split("");
+            let len = arr.length;
+            for (let i = 0; i < len - 1; i++) {
+                for (let j = 0; j < len - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr.join("");
+        }
+        function anag(str1, str2) {
+            let sortedStr1 = sort(str1);
+            let sortedStr2 = sort(str2);
+
+            if (sortedStr1 === sortedStr2) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let str1 = "silent";
+        let str2 = "listen";
+
+        let equal = anag(str1, str2);
+        console.log("String is Anagram or not=", equal);
+    </script>
+</body>
+</html>

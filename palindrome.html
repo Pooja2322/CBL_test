@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>
+        function palindrome(palinum) {
+            const number = palinum;
+            let reverse = 0;
+            let num = palinum; 
+            while (num > 0) {
+                const digit = num % 10;
+                reverse = (reverse * 10) + digit;
+                num = Math.floor(num / 10);
+            }
+            return number === reverse;
+        }
+        function findPalindrome(arr) {
+            const palindromeNum = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (ispalindrome(arr[i])) {
+                    palindromeNum.push(arr[i]);
+                }
+            }
+            return palindromeNum;
+        }
+
+        const numbers = [121, 123, 1331, 2552, 987, 1221, 12321, 454, 141];
+        const palindromeNum = findPalindrome(numbers);
+        console.log("Palindrome numbers:", palindromeNum);
+    </script>
+</body>
+</html>

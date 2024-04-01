@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels</title>
+</head>
+<body>
+    <script>
+        let arr=['J','Z','A','C','E','W','K','I','O','M','U','N','T','B'];
+        function findVowels(arr) {
+            let vowels = [];
+            for(let char of arr) {
+                if(char.toLowerCase() === "a" || char.toLowerCase() === "e" || char.toLowerCase() === "i" || char.toLowerCase() === "o" || char.toLowerCase() === "u") {
+                    vowels.push(char.toLowerCase());
+                }
+            }
+            return vowels;
+        }
+
+        let result = findVowels(arr);
+        console.log("Vowels Present in the given string is:", result);
+
+    </script>
+</body>
+</html>

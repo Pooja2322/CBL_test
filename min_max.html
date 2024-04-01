@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum and maximum number</title>
+</head>
+<body>
+    <script>
+        let arr=[23,21,43,89,65,74,12,25,100,150];
+        function SortArr(arr){
+            for(let i=0;i<arr.length;i++){
+                for(let j=i+1;j<arr.length;j++){
+                    if(arr[i]>arr[j]){
+                        let temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        let sum=0;
+        let ar=SortArr(arr);
+        console.log(arr);
+        console.log("Minimum element in the array is",ar[0]);
+        console.log("Maximum element in the array is",ar[arr.length-1]);
+        console.log("sum of maximum and minimum number is=",arr[0]+arr[arr.length-1]);
+    </script>
+    
+</body>
+</html>
+
